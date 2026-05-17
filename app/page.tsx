@@ -1,15 +1,19 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Catalog from "./components/Catalog"
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-black text-white min-h-screen">
       <Navbar />
-
-      <section className="h-screen flex items-center justify-center">
-        <h1 className="text-white text-5xl font-bold">
-          Ananda Dekorasi
-        </h1>
-      </section>
+      <Hero />
+      <About />
+      <Catalog />
+      <Contact />
+      <Footer />
     </main>
   );
 }

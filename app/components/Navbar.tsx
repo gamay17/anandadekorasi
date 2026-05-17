@@ -18,12 +18,11 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 border-b border-[#D4AF37]/10 bg-[#171717]/90 backdrop-blur-xl">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-4">
-        
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative overflow-hidden rounded-full">
+          <div className="relative">
             <Image
-              src="/logo.png"
+              src="/logoananda.png"
               alt="Ananda Dekorasi"
               width={52}
               height={52}
@@ -60,7 +59,6 @@ export default function Navbar() {
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-
           {/* CTA Button */}
           <a
             href="#kontak"
