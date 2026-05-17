@@ -4,52 +4,99 @@ export default function About() {
   return (
     <section
       id="tentang"
-      className="bg-[#111111] py-24 px-6 md:px-10"
+      className="bg-[#111111] px-6 py-24 md:px-10"
     >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-14 md:grid-cols-2">
 
         {/* Image */}
         <div className="relative">
+
+          {/* Border */}
           <div className="absolute -inset-2 rounded-3xl border border-[#D4AF37]/20" />
 
-          <Image
-            src="/About.jpg"
-            alt="Tentang Ananda Dekorasi"
-            width={700}
-            height={700}
-            className="relative rounded-3xl object-cover h-[500px] w-full"
-          />
+          {/* Image */}
+          <div className="relative overflow-hidden rounded-3xl bg-[#0F0F0F]">
+
+            <Image
+              src="/About.jpg"
+              alt="Tentang Ananda Dekorasi"
+              width={700}
+              height={700}
+              className="h-[500px] w-full object-cover"
+              priority
+            />
+
+          </div>
+
         </div>
 
         {/* Content */}
         <div>
-          <p className="text-[#D4AF37] uppercase tracking-[0.3em] text-sm mb-4">
+
+          {/* Label */}
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#D4AF37]">
             Tentang Kami
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">
+          {/* Heading */}
+          <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">
+
             Dekorasi Elegan
-            <span className="block text-[#D4AF37]">
+            <span className="mt-2 block text-[#D4AF37]">
               Untuk Momen Terbaik Anda
             </span>
+
           </h2>
 
-          <p className="mt-6 text-gray-300 leading-relaxed">
-            Ananda Dekorasi hadir sebagai solusi profesional dalam layanan
-            konveksi, dekorasi, dan penyediaan tenda untuk berbagai acara.
-            Kami berkomitmen menghadirkan konsep dekorasi yang elegan,
-            modern, dan berkesan untuk setiap momen spesial Anda.
-          </p>
+          {/* Description */}
+          <div className="mt-8 space-y-5">
 
-          <p className="mt-4 text-gray-400 leading-relaxed">
-            Dengan pengalaman dan pelayanan terbaik, kami siap membantu
-            mewujudkan acara impian mulai dari pernikahan, gathering,
-            event perusahaan, hingga berbagai acara lainnya.
-          </p>
+            <p className="text-base leading-relaxed text-gray-300 md:text-lg">
 
-          {/* Stats */}
-          
+              Ananda Dekorasi hadir sebagai penyedia layanan dekorasi,
+              tenda, dan perlengkapan acara dengan konsep yang elegan,
+              rapi, dan profesional untuk berbagai kebutuhan acara spesial Anda.
+
+            </p>
+
+            <p className="text-base leading-relaxed text-gray-400">
+
+              Kami menyediakan berbagai kebutuhan dekorasi mulai dari
+              sarung meja, sarung kursi, rumbai, plafon, background,
+              skirting meja, hingga rangka tenda untuk menciptakan
+              suasana acara yang lebih berkesan dan nyaman.
+
+            </p>
+
+            <p className="text-base leading-relaxed text-gray-400">
+
+              Dengan pelayanan yang profesional dan kualitas dekorasi
+              yang terjaga, kami siap membantu menghadirkan tampilan acara
+              yang lebih menarik, modern, dan berkelas.
+
+            </p>
+
+          </div>
+
+          {/* Highlight Box */}
+          <div className="mt-10 rounded-3xl border border-[#D4AF37]/20 bg-white/5 p-6 backdrop-blur-sm">
+
+            <p className="mb-3 text-sm uppercase tracking-[0.25em] text-[#D4AF37]">
+              Komitmen Kami
+            </p>
+
+            <h3 className="text-2xl font-semibold leading-snug text-white">
+
+              Menghadirkan dekorasi yang elegan,
+              modern, dan berkesan untuk setiap acara.
+
+            </h3>
+
+          </div>
+
         </div>
+
       </div>
     </section>
   );

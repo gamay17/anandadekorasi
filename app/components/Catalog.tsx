@@ -20,7 +20,6 @@ export default function Catalog() {
         "/catalog/meja-2.jpeg",
         "/catalog/meja-3.jpeg",
         "/catalog/meja-4.jpeg",
-
       ],
     },
 
@@ -82,32 +81,39 @@ export default function Catalog() {
   return (
     <section
       id="katalog"
-      className="bg-[#0A0A0A] py-24 px-6 md:px-10"
+      className="bg-[#0A0A0A] px-6 py-24 md:px-10"
     >
-      <div className="max-w-7xl mx-auto">
+
+      <div className="mx-auto w-full max-w-7xl">
 
         {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-[#D4AF37] uppercase tracking-[0.35em] text-sm mb-4">
+        <div className="mx-auto max-w-3xl text-center">
+
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#D4AF37]">
             Katalog
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">
+
             Kebutuhan Dekorasi
-            <span className="block text-[#D4AF37] mt-2">
+            <span className="mt-2 block text-[#D4AF37]">
               & Perlengkapan Acara
             </span>
+
           </h2>
 
-          <p className="mt-6 text-gray-400 leading-relaxed text-base md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-400 md:text-lg">
+
             Menyediakan berbagai perlengkapan dekorasi dan kebutuhan acara
             dengan tampilan yang elegan, rapi, dan profesional untuk
             menciptakan suasana acara yang lebih berkesan.
+
           </p>
+
         </div>
 
         {/* Category Menu */}
-        <div className="flex flex-wrap justify-center gap-4 mt-12">
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
 
           {[
             "Sarung Meja",
@@ -120,7 +126,7 @@ export default function Catalog() {
           ].map((item) => (
             <button
               key={item}
-              className="px-5 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:border-[#D4AF37]/40 hover:text-[#D4AF37] transition duration-300"
+              className="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-gray-300 transition duration-300 hover:border-[#D4AF37]/40 hover:text-[#D4AF37]"
             >
               {item}
             </button>
@@ -129,12 +135,12 @@ export default function Catalog() {
         </div>
 
         {/* Catalog Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
           {catalogs.map((item, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111] hover:border-[#D4AF37]/20 transition duration-300 ${
+              className={`group overflow-hidden rounded-3xl border border-white/10 bg-[#111111] transition duration-300 hover:border-[#D4AF37]/20 ${
                 index === catalogs.length - 1
                   ? "sm:col-span-2 lg:col-span-1 lg:col-start-2"
                   : ""
@@ -142,7 +148,7 @@ export default function Catalog() {
             >
 
               {/* Image Slider */}
-              <div className="relative h-[320px] bg-[#0F0F0F]">
+              <div className="relative flex h-[320px] items-center justify-center overflow-hidden bg-[#0F0F0F]">
 
                 <Swiper
                   modules={[Navigation]}
@@ -152,41 +158,46 @@ export default function Catalog() {
                   }}
                   slidesPerView={1}
                   loop={true}
-                  className="h-full"
+                  className="h-full w-full"
                 >
 
                   {item.images.map((image, i) => (
                     <SwiperSlide key={i}>
-                      <div className="relative h-[320px] w-full flex items-center justify-center bg-[#0F0F0F]">
+
+                      <div className="flex h-[320px] w-full items-center justify-center p-4">
 
                         <Image
                           src={image}
                           alt={item.title}
                           width={600}
                           height={400}
-                          className="max-h-full max-w-full object-contain"
+                          className="h-[280px] w-auto object-contain"
+                          style={{ margin: "0 auto" }}
                         />
 
                       </div>
+
                     </SwiperSlide>
                   ))}
 
                 </Swiper>
 
-                {/* Navigation Buttons */}
+                {/* Navigation */}
                 {item.images.length > 1 && (
                   <>
+
                     <button
-                      className={`prev-${index} absolute left-3 top-1/2 z-10 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37]/40 hover:text-[#D4AF37] transition`}
+                      className={`prev-${index} absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white transition duration-300 hover:border-[#D4AF37]/40 hover:text-[#D4AF37]`}
                     >
                       <ChevronLeft size={18} />
                     </button>
 
                     <button
-                      className={`next-${index} absolute right-3 top-1/2 z-10 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37]/40 hover:text-[#D4AF37] transition`}
+                      className={`next-${index} absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white transition duration-300 hover:border-[#D4AF37]/40 hover:text-[#D4AF37]`}
                     >
                       <ChevronRight size={18} />
                     </button>
+
                   </>
                 )}
 
@@ -195,11 +206,11 @@ export default function Catalog() {
               {/* Content */}
               <div className="p-6">
 
-                <p className="text-[#D4AF37] text-sm mb-2 tracking-wide">
+                <p className="mb-2 text-sm tracking-wide text-[#D4AF37]">
                   {item.category}
                 </p>
 
-                <h3 className="text-2xl font-semibold text-white group-hover:text-[#D4AF37] transition duration-300">
+                <h3 className="text-2xl font-semibold text-white transition duration-300 group-hover:text-[#D4AF37]">
                   {item.title}
                 </h3>
 
@@ -209,6 +220,7 @@ export default function Catalog() {
           ))}
 
         </div>
+
       </div>
     </section>
   );
